@@ -11,7 +11,7 @@ export default function Topbar({ onMenuClick }) {
         <Menu size={22} />
       </button>
 
-      <a className={styles.siteLink} href="http://localhost:5173" target="_blank" rel="noreferrer">
+      <a className={styles.siteLink} href={import.meta.env.VITE_SITE_URL || 'http://localhost:5173'} target="_blank" rel="noreferrer">
         <ExternalLink size={14} />
         View site
       </a>
