@@ -1,0 +1,32 @@
+.previewLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: var(--space-sm) 0 var(--space-2xs);
+}
+
+.preview {
+  border-radius: var(--radius-md);
+  border: 1.5px solid;
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.previewBtn {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.previewGold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 0 0 0 100%;
+  opacity: 0.5;
+}

@@ -1,0 +1,105 @@
+/* Shared form layout, imported as a CSS module by settings/package/destination forms. */
+
+.section {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-3xs);
+}
+
+.sectionNote {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-sm);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.colorRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.colorSwatch {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  padding: 2px;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.actionsBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2xs);
+  position: sticky;
+  bottom: 0;
+  background: var(--color-ivory);
+  padding: var(--space-sm) 0;
+}
+
+.dayGroup {
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-2xs);
+  position: relative;
+}
+
+.dayGroupHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2xs);
+}
+
+.dayLabel {
+  font-weight: 700;
+  color: var(--color-deep-blue);
+  font-size: 0.85rem;
+}
+
+.removeBtn {
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-error);
+  padding: 0.3rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.removeBtn:hover {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: var(--color-error);
+}
+
+@media (max-width: 640px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}

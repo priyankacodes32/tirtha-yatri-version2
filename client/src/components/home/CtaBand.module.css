@@ -1,0 +1,44 @@
+.band {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(9, 30, 47, 0.92), rgba(18, 59, 93, 0.8));
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  max-width: 680px;
+}
+
+.content h2 {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.content p {
+  color: var(--color-text-on-dark-muted);
+  font-size: 1.05rem;
+  margin-bottom: var(--space-lg);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}

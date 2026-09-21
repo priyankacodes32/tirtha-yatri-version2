@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  gap: var(--space-2xs);
+  width: 100%;
+}
+
+.removeBtn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-error);
+  padding: 0 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.removeBtn:hover {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: var(--color-error);
+}

@@ -1,0 +1,40 @@
+.wrap {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  max-width: min(360px, calc(100vw - 2 * var(--space-md)));
+}
+
+.toast {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-white);
+  cursor: pointer;
+  animation: slide-in var(--transition-base);
+}
+
+.success {
+  background: var(--color-success);
+}
+
+.error {
+  background: var(--color-error);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

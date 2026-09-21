@@ -1,0 +1,68 @@
+/**
+ * Design tokens — the 60/30/10 Himalaya palette plus type scale, spacing,
+ * radii and shadows used across every component. Nothing else in the app
+ * should hardcode a hex color; reference these variables instead.
+ */
+:root {
+  /* 60% — dominant base */
+  --color-ivory: #f7f4ee;
+  --color-ivory-soft: #fbfaf6;
+  --color-white: #ffffff;
+
+  /* 30% — brand / mountain tones */
+  --color-deep-blue: #123b5d;
+  --color-deep-blue-dark: #0c2940;
+  --color-slate: #274c5e;
+
+  /* 10% — accent, used sparingly */
+  --color-saffron: #e76f24;
+  --color-saffron-dark: #c85a17;
+  --color-gold: #e9b44c;
+
+  /* Neutrals / text */
+  --color-text: #1c2b33;
+  --color-text-muted: #5b6b73;
+  --color-text-on-dark: #f4f1ea;
+  --color-text-on-dark-muted: #b8c4cc;
+  --color-border: #e3ddd0;
+  --color-border-on-dark: rgba(244, 241, 234, 0.16);
+
+  /* Status */
+  --color-success: #1e8a5f;
+  --color-error: #c0392b;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, sans-serif;
+
+  /* Spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6.5rem;
+
+  /* Layout */
+  --container-max: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(18, 59, 93, 0.08);
+  --shadow-md: 0 12px 32px rgba(18, 59, 93, 0.14);
+  --shadow-lg: 0 24px 64px rgba(18, 59, 93, 0.22);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-out);
+  --transition-base: 0.35s var(--ease-out);
+
+  --z-navbar: 100;
+  --z-modal: 1000;
+}

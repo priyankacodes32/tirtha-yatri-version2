@@ -1,0 +1,184 @@
+.wrap {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-xl);
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+  gap: var(--space-2xs);
+}
+
+.progress li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.progressDot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.progressDone .progressDot {
+  background: var(--color-saffron);
+  border-color: var(--color-saffron);
+  color: var(--color-white);
+}
+
+.progressDone {
+  color: var(--color-deep-blue);
+}
+
+.progressLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: none;
+}
+
+.form {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.choices legend {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-deep-blue);
+  margin-bottom: var(--space-md);
+  padding: 0;
+}
+
+.choiceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-sm);
+}
+
+.choice {
+  background: var(--color-ivory);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-weight: 700;
+  color: var(--color-deep-blue);
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.choice:hover {
+  border-color: var(--color-saffron);
+}
+
+.choiceActive {
+  background: var(--color-deep-blue);
+  border-color: var(--color-deep-blue);
+  color: var(--color-white);
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.singleField,
+.spanAll {
+  grid-column: 1 / -1;
+}
+
+.fieldGrid label,
+.singleField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-deep-blue);
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.fieldGrid input,
+.fieldGrid textarea,
+.singleField input {
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  resize: vertical;
+}
+
+.fieldGrid input:focus,
+.fieldGrid textarea:focus,
+.singleField input:focus {
+  border-color: var(--color-saffron);
+}
+
+.errorMsg {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: var(--space-sm);
+}
+
+.nav {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.successState {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.successIcon {
+  color: var(--color-success);
+  margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 720px) {
+  .progressLabel {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,268 @@
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(9, 30, 47, 0.92), rgba(9, 30, 47, 0.2) 60%);
+}
+
+.heroContent {
+  position: relative;
+  padding-bottom: var(--space-xl);
+  color: var(--color-white);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--color-saffron);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-sm);
+}
+
+.heroContent h1 {
+  color: var(--color-white);
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin-bottom: var(--space-sm);
+  max-width: 800px;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  font-size: 0.9rem;
+  color: var(--color-text-on-dark-muted);
+}
+
+.heroMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.rating {
+  color: var(--color-gold);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-2xl);
+  padding: var(--space-2xl) var(--space-md);
+  align-items: start;
+}
+
+.main {
+  min-width: 0;
+}
+
+.factsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.factCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.factIcon {
+  color: var(--color-saffron);
+  flex-shrink: 0;
+}
+
+.factLabel {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.factValue {
+  font-weight: 700;
+  color: var(--color-deep-blue);
+  font-size: 0.92rem;
+}
+
+.section {
+  margin-bottom: var(--space-2xl);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.paragraph {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.highlightList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-sm);
+}
+
+.highlightList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.highlightList svg {
+  color: var(--color-saffron);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.includeExcludeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.includeList li,
+.excludeList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  padding: 0.4rem 0;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.includeList svg {
+  color: var(--color-success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.excludeList svg {
+  color: var(--color-error);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoBlock {
+  margin-bottom: var(--space-md);
+}
+
+.infoBlock h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-sm);
+}
+
+.galleryGrid img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.sidebarCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.priceRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-2xs);
+}
+
+.originalPrice {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-saffron);
+}
+
+.perPerson {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.relatedSection {
+  padding: 0 var(--space-md) var(--space-3xl);
+}
+
+.relatedSection h2 {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-lg);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .includeExcludeGrid {
+    grid-template-columns: 1fr;
+  }
+}

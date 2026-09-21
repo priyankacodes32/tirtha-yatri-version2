@@ -1,0 +1,56 @@
+.card {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: -64px auto 0;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--space-md);
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-slate);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field select {
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem;
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  background: var(--color-ivory-soft);
+}
+
+.field select:focus {
+  border-color: var(--color-saffron);
+}
+
+.submit {
+  height: 48px;
+}
+
+@media (max-width: 780px) {
+  .card {
+    grid-template-columns: 1fr;
+    margin: -40px var(--space-md) 0;
+    padding: var(--space-md);
+  }
+}

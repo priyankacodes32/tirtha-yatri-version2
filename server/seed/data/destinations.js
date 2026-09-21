@@ -1,0 +1,193 @@
+import { img } from './images.js';
+
+/**
+ * Original destination copy — written for Tirtha Yatri, not copied from any
+ * reference site. Used only to understand the type of content expected.
+ * Each destination has its own, non-repeated cover image chosen to match
+ * its actual terrain/architecture — see images.js for sourcing notes.
+ */
+const destinations = [
+  {
+    name: 'Muktinath Temple',
+    category: 'spiritual',
+    shortDescription: 'The 108 sacred water spouts and eternal flame revered by Hindus and Buddhists alike.',
+    description:
+      'Perched at 3,710 metres in the Himalayan rain-shadow, Muktinath is one of the subcontinent\'s most important pilgrimage sites — sacred to Hindus as a Vishnu shrine and to Buddhists as Chumig Gyatsa, a seat of dakini power. Pilgrims circle the temple courtyard beneath 108 bull-head water spouts, bathing in glacial water believed to grant moksha, before witnessing the natural gas flame that burns beside a spring in the adjoining Jwala Mai shrine.',
+    coverImage: img('muktinathMandir', 1600),
+    gallery: [img('muktinathMandir', 1200), img('prayerFlagsMountainBackdrop', 1200)],
+    altitude: '3,710 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: 'Fly or drive to Jomsom, then a short jeep ride or a scenic 2-3 hour walk up to the temple.',
+    thingsToDo: [
+      'Bathe beneath the 108 water spouts',
+      'Witness the eternal flame at Jwala Mai Temple',
+      'Visit the nearby Narsingh Gompa for valley views',
+      'Join the morning puja with local pilgrims',
+    ],
+    nearbyAttractions: ['Jwala Mai Temple', 'Narsingh Gompa', 'Ranipauwa village'],
+    isFeatured: true,
+    isActive: true,
+  },
+  {
+    name: 'Jomsom',
+    category: 'villages',
+    shortDescription: 'The windswept gateway town to Mustang, where the Kali Gandaki carves between two eight-thousanders.',
+    description:
+      'Jomsom is the administrative heart of Mustang and the launch point for nearly every Muktinath journey — reachable by a short mountain flight from Pokhara, a long day\'s drive, or (increasingly) a direct tourist bus. The town sits in a dramatic wind corridor between Dhaulagiri and Nilgiri, and its afternoon gusts are so reliable that most flights land before 10am.',
+    coverImage: img('busOnCliffRoadJomsom', 1600),
+    gallery: [img('busOnCliffRoadJomsom', 1200), img('buildingWithMountains', 1200)],
+    altitude: '2,720 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: '20-minute flight from Pokhara, a tourist bus plus jeep from Kathmandu/Pokhara, or 6-8 hours by jeep from Pokhara/Beni.',
+    thingsToDo: [
+      'Visit the Eco Museum on Mustang culture and geology',
+      'Walk along the Kali Gandaki riverbed',
+      'Stock up before heading further into Upper Mustang',
+    ],
+    nearbyAttractions: ['Kali Gandaki River', 'Thini village', 'Dhumba Lake'],
+    isFeatured: true,
+    isActive: true,
+  },
+  {
+    name: 'Kagbeni',
+    category: 'villages',
+    shortDescription: 'A medieval walled village of narrow alleys and chortens guarding the entrance to Upper Mustang.',
+    description:
+      'Kagbeni\'s maze of whitewashed alleys, red-ochre gompa and crumbling fort walls have changed little in centuries. It marks the checkpoint into restricted Upper Mustang, and its riverside setting at the confluence of two valleys makes it one of the most photographed villages on the route to Muktinath.',
+    coverImage: img('villageMountainRange', 1600),
+    gallery: [img('villageMountainRange', 1200), img('terracedVillageValley', 1200)],
+    altitude: '2,800 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: '45-minute jeep ride north from Jomsom along the Kali Gandaki.',
+    thingsToDo: [
+      'Wander the old town\'s narrow lanes',
+      'Visit the 15th-century Kag Chode Thupten Samphel Ling monastery',
+      'Watch the sunset over the Kali Gandaki valley',
+    ],
+    nearbyAttractions: ['Upper Mustang checkpoint', 'Kali Gandaki River', 'Tiri village'],
+    isFeatured: true,
+    isActive: true,
+  },
+  {
+    name: 'Marpha',
+    category: 'culture',
+    shortDescription: 'Nepal\'s famed "apple village" of stone houses, whitewashed courtyards and orchard-lined lanes.',
+    description:
+      'Marpha is often called the cleanest and prettiest village on the Annapurna-Mustang circuit. Flat-roofed stone houses climb the hillside above orchards that produce Nepal\'s best-known apples, and the village\'s Buddhist gompa overlooks the whole valley.',
+    coverImage: img('housesOnMountainVillage', 1600),
+    gallery: [img('housesOnMountainVillage', 1200), img('housesOverlookingRange', 1200)],
+    altitude: '2,670 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: '30-minute jeep ride south of Jomsom.',
+    thingsToDo: [
+      'Taste local apple brandy and cider',
+      'Climb to the hillside gompa for panoramic views',
+      'Explore the old town\'s cobbled lanes',
+    ],
+    nearbyAttractions: ['Marpha Gompa', 'Tukuche village', 'Kali Gandaki River'],
+    isFeatured: false,
+    isActive: true,
+  },
+  {
+    name: 'Lo Manthang',
+    category: 'culture',
+    shortDescription: 'The walled former capital of the Kingdom of Lo — Upper Mustang\'s ancient royal city.',
+    description:
+      'Sealed off to outsiders until 1992, Lo Manthang preserves a Tibetan Buddhist kingdom largely untouched by the modern world. Behind its mud-brick walls stand a royal palace, four major monasteries and centuries-old murals, all set against the stark red cliffs of the Mustang plateau.',
+    coverImage: img('desertCanyonSnowyMountains', 1600),
+    gallery: [img('desertCanyonSnowyMountains', 1200), img('goldTempleFlagsNamche', 1200)],
+    altitude: '3,840 m',
+    bestTimeToVisit: 'May–September (a restricted-area permit is required)',
+    howToReach: '2-day jeep journey from Jomsom, or a multi-day trek through the Upper Mustang trail.',
+    thingsToDo: [
+      'Tour the four royal monasteries',
+      'Visit the former royal palace',
+      'Attend the Tiji Festival if visiting in spring',
+    ],
+    nearbyAttractions: ['Chhoser caves', 'Ghar Gompa', 'Namgyal Monastery'],
+    isFeatured: true,
+    isActive: true,
+  },
+  {
+    name: 'Dhumba Lake',
+    category: 'nature',
+    shortDescription: 'A turquoise alpine lake mirroring Nilgiri peak, a short walk above Jomsom.',
+    description:
+      'Also known as Dhumpa or Dhumcho Lake, this small glacial pool sits in a quiet bowl above Jomsom, ringed by prayer flags and framed by the Nilgiri massif. It\'s an easy half-day detour and one of the most photogenic still-water reflections in the region.',
+    coverImage: img('mountainLakeReflection', 1600),
+    gallery: [img('mountainLakeReflection', 1200), img('snowPeakSunrise', 1200)],
+    altitude: '2,890 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: '1-1.5 hour walk uphill from Jomsom, or combine with a Jomsom stopover.',
+    thingsToDo: ['Photograph the Nilgiri reflection', 'Short picnic hike', 'Birdwatching in the surrounding scrub'],
+    nearbyAttractions: ['Jomsom', 'Thini village'],
+    isFeatured: false,
+    isActive: true,
+  },
+  {
+    name: 'Kali Gandaki River',
+    category: 'nature',
+    shortDescription: 'One of the world\'s deepest gorges, and the ancient trade and pilgrimage corridor to Muktinath.',
+    description:
+      'The Kali Gandaki carves a gorge deeper than the distance between Everest and its own riverbed, running between the Dhaulagiri and Annapurna massifs. Its dry bed is famous for black ammonite fossils called shaligrams, considered sacred embodiments of Vishnu.',
+    coverImage: img('riverThroughValley', 1600),
+    gallery: [img('riverThroughValley', 1200), img('jeepDirtRoadSunset', 1200)],
+    altitude: 'Valley floor ~2,500-2,800 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: 'Runs alongside the Jomsom-Kagbeni-Muktinath jeep road; visible for most of the journey.',
+    thingsToDo: ['Search for shaligram fossils', 'Photograph the gorge at sunset', 'Ride the riverside jeep track'],
+    nearbyAttractions: ['Kagbeni', 'Jomsom', 'Tukuche'],
+    isFeatured: false,
+    isActive: true,
+  },
+  {
+    name: 'Lubra Village',
+    category: 'culture',
+    shortDescription: 'A hidden valley village and the last stronghold of the pre-Buddhist Bon tradition in Mustang.',
+    description:
+      'Tucked into a side valley off the main Jomsom-Kagbeni trail, Lubra is home to one of the few remaining Bon monasteries in Nepal, predating Tibetan Buddhism in the region. The short detour trail winds through a striking eroded canyon before opening onto the village\'s terraced fields.',
+    coverImage: img('villageOnMountainside', 1600),
+    gallery: [img('villageOnMountainside', 1200), img('villageMountainRange', 1200)],
+    altitude: '2,930 m',
+    bestTimeToVisit: 'March–June and September–November',
+    howToReach: 'A 2-3 hour side trek from the Jomsom-Kagbeni trail, or a longer jeep-plus-walk combination.',
+    thingsToDo: ['Visit the Bon monastery', 'Walk the canyon approach trail', 'Meet the village\'s Bon community'],
+    nearbyAttractions: ['Kali Gandaki valley', 'Kagbeni'],
+    isFeatured: false,
+    isActive: true,
+  },
+  {
+    name: 'Tiji Festival & Mustang Culture',
+    category: 'culture',
+    shortDescription: 'A three-day masked-dance festival in Lo Manthang re-enacting the triumph of good over demons.',
+    description:
+      'Held annually in the Tibetan month of Tiji (typically May), this festival fills Lo Manthang\'s dusty central square with monks in elaborate masks and silk costumes performing the "Chham" dances that tell the story of Dorje Jono, who saved Mustang from a demon of destruction. Families travel in from surrounding villages, often on horseback, for the gathering.',
+    coverImage: img('horsesOnDustyMountainPath', 1600),
+    gallery: [img('horsesOnDustyMountainPath', 1200), img('prayerFlagsMountainBackdrop', 1200)],
+    altitude: '3,840 m (Lo Manthang)',
+    bestTimeToVisit: 'May (exact dates follow the Tibetan lunar calendar)',
+    howToReach: 'Combine with a Lo Manthang jeep or trekking itinerary timed to the festival dates.',
+    thingsToDo: ['Watch the masked Chham dances', 'Photograph traditional Mustang costumes', 'Explore Lo Manthang during festival season'],
+    nearbyAttractions: ['Lo Manthang royal palace', 'Namgyal Monastery'],
+    isFeatured: true,
+    isActive: true,
+  },
+  {
+    name: 'Upper Mustang Landscapes',
+    category: 'adventure',
+    shortDescription: 'Wind-carved red cliffs, cave dwellings and high desert plateau — Nepal\'s "last forbidden kingdom".',
+    description:
+      'Beyond Kagbeni, the landscape shifts abruptly from green valley to high-altitude desert: eroded canyons in ochre and rust, centuries-old cave dwellings cut into cliff faces, and wide plateaus that feel closer to the Tibetan plateau than to the rest of Nepal. A special restricted-area permit is required beyond Kagbeni.',
+    coverImage: img('trekkersClimbing', 1600),
+    gallery: [img('trekkersClimbing', 1200), img('desertCanyonSnowyMountains', 1200)],
+    altitude: '2,800–4,000 m',
+    bestTimeToVisit: 'June–September (rain-shadow desert climate, good even in monsoon)',
+    howToReach: 'By jeep or trekking beyond Kagbeni with a Restricted Area Permit (RAP) and licensed guide.',
+    thingsToDo: ['Explore the Chhoser sky caves', 'Trek the high desert plateau', 'Photograph the eroded canyon formations'],
+    nearbyAttractions: ['Lo Manthang', 'Chhoser caves', 'Ghar Gompa'],
+    isFeatured: true,
+    isActive: true,
+  },
+];
+
+export default destinations;

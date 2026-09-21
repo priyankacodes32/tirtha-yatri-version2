@@ -1,0 +1,7 @@
+.filterSelect {
+  min-width: 160px;
+}
+
+.featuredStar {
+  color: var(--color-gold);
+}

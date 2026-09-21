@@ -1,0 +1,126 @@
+.section {
+  background: var(--color-deep-blue);
+  padding: var(--space-3xl) 0;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 720px;
+}
+
+.navBtn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-on-dark);
+  background: transparent;
+  color: var(--color-white);
+  transition: background var(--transition-fast);
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.slideWrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.slide {
+  margin: 0;
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.quoteIcon {
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.text {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-family: var(--font-heading);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+}
+
+.author {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: 0.95rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--color-text-on-dark-muted);
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-2xs);
+  margin-top: var(--space-lg);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border-on-dark);
+  border: none;
+  padding: 0;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.dotActive {
+  background: var(--color-gold);
+  transform: scale(1.3);
+}
+
+@media (max-width: 560px) {
+  .carousel {
+    gap: var(--space-2xs);
+  }
+
+  .text {
+    font-size: 1.05rem;
+  }
+}
