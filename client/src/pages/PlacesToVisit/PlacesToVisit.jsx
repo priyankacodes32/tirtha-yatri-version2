@@ -12,7 +12,7 @@ export default function PlacesToVisit() {
   const [searchParams, setSearchParams] = useSearchParams();
   const category = searchParams.get('category') || '';
 
-  const { data, loading, error } = useFetch(() => getDestinations({ category, limit: 24 }), [category]);
+  const { data, loading, waking, error } = useFetch(() => getDestinations({ category, limit: 24 }), [category]);
   const destinations = data?.data || [];
 
   // Category chips are admin-managed (Explore Mustang categories can be
@@ -57,7 +57,7 @@ export default function PlacesToVisit() {
           ))}
         </div>
 
-        {loading && <Loader label="Loading destinations…" fullHeight />}
+        {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading destinations…'} fullHeight />}
         {error && <EmptyState title="Couldn't load destinations" message={error} />}
         {!loading && !error && destinations.length === 0 && (
           <EmptyState title="No destinations in this category yet" message="Try a different filter." />

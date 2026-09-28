@@ -11,7 +11,7 @@ import { getCategories } from '../../api/categoryApi.js';
 import styles from './FeaturedPackages.module.css';
 
 export default function FeaturedPackages() {
-  const { data, loading, error } = useFetch(getFeaturedPackages, []);
+  const { data, loading, waking, error } = useFetch(getFeaturedPackages, []);
   const { data: categoryData } = useFetch(() => getCategories('package'), []);
   const [tab, setTab] = useState('');
 
@@ -48,7 +48,7 @@ export default function FeaturedPackages() {
         ))}
       </div>
 
-      {loading && <Loader label="Loading packages…" />}
+      {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading packages…'} />}
       {error && <EmptyState title="Couldn't load packages" message={error} />}
       {!loading && !error && filtered.length === 0 && (
         <EmptyState title="No packages in this category yet" message="Try a different filter, or view all packages." />

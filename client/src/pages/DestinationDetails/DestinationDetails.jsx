@@ -11,10 +11,10 @@ import styles from './DestinationDetails.module.css';
 
 export default function DestinationDetails() {
   const { slug } = useParams();
-  const { data, loading, error } = useFetch(() => getDestinationBySlug(slug), [slug]);
+  const { data, loading, waking, error } = useFetch(() => getDestinationBySlug(slug), [slug]);
   const dest = data?.data;
 
-  if (loading) return <Loader label="Loading destination…" fullHeight />;
+  if (loading) return <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading destination…'} fullHeight />;
   if (error || !dest) {
     return (
       <EmptyState

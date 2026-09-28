@@ -16,7 +16,7 @@ export default function PackageDetails() {
   const { slug } = useParams();
   const { openEnquiry } = useEnquiryModal();
 
-  const { data, loading, error } = useFetch(() => getPackageBySlug(slug), [slug]);
+  const { data, loading, waking, error } = useFetch(() => getPackageBySlug(slug), [slug]);
   const pkg = data?.data;
 
   const { data: relatedData } = useFetch(
@@ -25,7 +25,7 @@ export default function PackageDetails() {
   );
   const related = (relatedData?.data || []).filter((p) => p.slug !== slug).slice(0, 3);
 
-  if (loading) return <Loader label="Loading package…" fullHeight />;
+  if (loading) return <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading package…'} fullHeight />;
   if (error || !pkg) {
     return (
       <EmptyState

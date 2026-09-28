@@ -15,7 +15,7 @@ import styles from './BlogDetails.module.css';
 
 export default function BlogDetails() {
   const { slug } = useParams();
-  const { data, loading, error } = useFetch(() => getBlogBySlug(slug), [slug]);
+  const { data, loading, waking, error } = useFetch(() => getBlogBySlug(slug), [slug]);
   const blog = data?.data;
 
   const { blocks, headings } = useMemo(() => (blog ? parseBlog(blog.content) : { blocks: [], headings: [] }), [blog]);
@@ -35,7 +35,7 @@ export default function BlogDetails() {
     return [...withSharedTag, ...rest].slice(0, 3);
   }, [blog, categoryPosts, slug]);
 
-  if (loading) return <Loader label="Loading story…" fullHeight />;
+  if (loading) return <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading story…'} fullHeight />;
   if (error || !blog) {
     return (
       <EmptyState

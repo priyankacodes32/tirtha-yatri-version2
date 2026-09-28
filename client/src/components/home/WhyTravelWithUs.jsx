@@ -8,7 +8,7 @@ import { getIcon } from '../../utils/iconMap.js';
 import styles from './WhyTravelWithUs.module.css';
 
 export default function WhyTravelWithUs() {
-  const { data, loading, error } = useFetch(getFeatures, []);
+  const { data, loading, waking, error } = useFetch(getFeatures, []);
   const features = data?.data || [];
 
   return (
@@ -19,7 +19,7 @@ export default function WhyTravelWithUs() {
         subtitle="What makes planning a Muktinath trip with us different."
       />
 
-      {loading && <Loader label="Loading…" />}
+      {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading…'} />}
       {error && <EmptyState title="Couldn't load this section" message={error} />}
 
       {!loading && !error && features.length > 0 && (

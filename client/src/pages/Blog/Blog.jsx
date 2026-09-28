@@ -23,7 +23,7 @@ export default function Blog() {
   const { data: featuredData } = useFetch(() => getBlogs({ featured: 'true' }), []);
   const featured = featuredData?.data || [];
 
-  const { data, loading, error } = useFetch(() => getBlogs({ category, limit: 50 }), [category]);
+  const { data, loading, waking, error } = useFetch(() => getBlogs({ category, limit: 50 }), [category]);
   const posts = data?.data || [];
 
   const filtered = useMemo(() => {
@@ -100,7 +100,7 @@ export default function Blog() {
           </div>
         </div>
 
-        {loading && <Loader label="Loading stories…" fullHeight />}
+        {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading stories…'} fullHeight />}
         {error && <EmptyState title="Couldn't load stories" message={error} />}
         {!loading && !error && filtered.length === 0 && (
           <EmptyState title="No stories found" message="Try a different category or search term." />

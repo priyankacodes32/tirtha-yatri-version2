@@ -9,7 +9,7 @@ import { getReviews } from '../../api/reviewApi.js';
 import styles from './TestimonialCarousel.module.css';
 
 export default function TestimonialCarousel() {
-  const { data, loading, error } = useFetch(() => getReviews({ featured: 'true' }), []);
+  const { data, loading, waking, error } = useFetch(() => getReviews({ featured: 'true' }), []);
   const reviews = data?.data || [];
   const [index, setIndex] = useState(0);
 
@@ -33,7 +33,7 @@ export default function TestimonialCarousel() {
       </div>
 
       <div className={`container ${styles.wrap}`}>
-        {loading && <Loader label="Loading stories…" />}
+        {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading stories…'} />}
         {error && <EmptyState title="Couldn't load reviews" message={error} />}
         {!loading && !error && reviews.length === 0 && (
           <EmptyState title="No reviews yet" message="Check back soon for traveller stories." />

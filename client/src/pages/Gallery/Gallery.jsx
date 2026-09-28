@@ -25,11 +25,11 @@ export default function Gallery() {
   const { data: categoryData } = useFetch(() => getCategories('gallery'), []);
   const categories = [{ name: 'All', slug: '' }, ...(categoryData?.data || [])];
 
-  const { data: photoData, loading: photosLoading, error: photosError } = useFetch(
+  const { data: photoData, loading: photosLoading, waking: photosWaking, error: photosError } = useFetch(
     () => getGalleryImages({ category }),
     [category]
   );
-  const { data: videoData, loading: videosLoading, error: videosError } = useFetch(
+  const { data: videoData, loading: videosLoading, waking: videosWaking, error: videosError } = useFetch(
     () => getVideos({ category }),
     [category]
   );
@@ -103,7 +103,7 @@ export default function Gallery() {
 
         {tab === 'photos' && (
           <>
-            {photosLoading && <Loader label="Loading photos…" fullHeight />}
+            {photosLoading && <Loader label={photosWaking ? 'Waking up the server, this can take a minute…' : 'Loading photos…'} fullHeight />}
             {photosError && <EmptyState title="Couldn't load photos" message={photosError} />}
             {!photosLoading && !photosError && photos.length === 0 && (
               <EmptyState title="No photos in this category yet" message="Try a different filter." />
@@ -120,7 +120,7 @@ export default function Gallery() {
 
         {tab === 'videos' && (
           <>
-            {videosLoading && <Loader label="Loading videos…" fullHeight />}
+            {videosLoading && <Loader label={videosWaking ? 'Waking up the server, this can take a minute…' : 'Loading videos…'} fullHeight />}
             {videosError && <EmptyState title="Couldn't load videos" message={videosError} />}
             {!videosLoading && !videosError && videos.length === 0 && (
               <EmptyState title="No videos in this category yet" message="Check back soon." />

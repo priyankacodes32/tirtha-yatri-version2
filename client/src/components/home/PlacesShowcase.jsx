@@ -12,7 +12,7 @@ import styles from './PlacesShowcase.module.css';
 const LARGE_INDEXES = new Set([0, 3]);
 
 export default function PlacesShowcase() {
-  const { data, loading, error } = useFetch(getFeaturedDestinations, []);
+  const { data, loading, waking, error } = useFetch(getFeaturedDestinations, []);
   const destinations = data?.data || [];
 
   return (
@@ -26,7 +26,7 @@ export default function PlacesShowcase() {
       </div>
 
       <div className="container">
-        {loading && <Loader label="Loading destinations…" />}
+        {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading destinations…'} />}
         {error && <EmptyState title="Couldn't load destinations" message={error} />}
         {!loading && !error && destinations.length === 0 && (
           <EmptyState title="No destinations yet" message="Check back soon." />

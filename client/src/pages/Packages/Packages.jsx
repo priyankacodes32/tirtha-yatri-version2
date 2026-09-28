@@ -38,7 +38,7 @@ export default function Packages() {
 
   const search = searchParams.get('search') || '';
 
-  const { data, loading, error } = useFetch(
+  const { data, loading, waking, error } = useFetch(
     () => getPackages({ category, search, sort, page, limit: 9 }),
     [category, search, sort, page]
   );
@@ -77,7 +77,7 @@ export default function Packages() {
       <section className={`container ${styles.body}`}>
         <PackageFilters filters={filters} onChange={handleFiltersChange} resultCount={data?.count} />
 
-        {loading && <Loader label="Loading packages…" fullHeight />}
+        {loading && <Loader label={waking ? 'Waking up the server, this can take a minute…' : 'Loading packages…'} fullHeight />}
         {error && <EmptyState title="Couldn't load packages" message={error} />}
         {!loading && !error && packages.length === 0 && (
           <EmptyState
